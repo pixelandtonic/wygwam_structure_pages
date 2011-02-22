@@ -105,9 +105,9 @@ class Wygwam_structure_pages_ext {
 
 					// add this page to the config
 					$config['link_types']['Structure'][] = array(
-						'label' => $label,
-						'url' => $this->EE->functions->create_page_url($site_pages[$site_id]['url'], $site_pages[$site_id]['uris'][$entry_id]),
-						'label_depth' => $page_data['depth']
+						'label'       => $label,
+						'label_depth' => $page_data['depth'],
+						'url'         => $this->EE->functions->create_page_url($site_pages[$site_id]['url'], $site_pages[$site_id]['uris'][$entry_id])
 					);
 				}
 			}

@@ -17,14 +17,6 @@ class Wygwam_structure_pages {
 	var $settings_exist = 'n';
 	var $docs_url       = 'http://github.com/brandonkelly/wygwam_structure_pages';
 
-	/**
-	 * Class Constructor
-	 *
-	 */
-	function Wygwam_structure_pages()
-	{
-	}
-
 	// --------------------------------------------------------------------
 
 	/**
@@ -36,9 +28,10 @@ class Wygwam_structure_pages {
 
 		// add the row to exp_extensions
 		$DB->query($DB->insert_string('exp_extensions', array(
-			'class'    => 'Wygwam_structure_pages',
-			'hook'     => 'wygwam_config',
+			'class'    => get_class($this),
 			'method'   => 'wygwam_config',
+			'hook'     => 'wygwam_config',
+			'settings' => '',
 			'priority' => 10,
 			'version'  => $this->version,
 			'enabled'  => 'y'
@@ -62,7 +55,7 @@ class Wygwam_structure_pages {
 	function disable_extension()
 	{
 		global $DB;
-		$DB->query($DB->update_string('exp_extensions', array('enabled' => 'n'), 'class = "Wygwam_structure_pages"'));
+		$DB->query($DB->update_string('exp_extensions', array('enabled' => 'n'), 'class = "'.get_class($this).'"'));
 	}
 
 	// --------------------------------------------------------------------
@@ -73,6 +66,7 @@ class Wygwam_structure_pages {
 	function wygwam_config($config, $settings)
 	{
 		global $EXT, $FNS, $DB, $PREFS;
+
 		// If another extension shares the same hook,
 		// we need to get the latest and greatest config
 		if ($EXT->last_call !== FALSE)
@@ -107,9 +101,9 @@ class Wygwam_structure_pages {
 
 					// add this page to the config
 					$config['link_types']['Structure'][] = array(
-						'label' => $label,
-						'url' => $FNS->create_page_url($site_pages[$site_id]['url'], $site_pages[$site_id]['uris'][$entry_id]),
-						'label_depth' => $page_data['depth']
+						'label'       => $label,
+						'label_depth' => $page_data['depth'],
+						'url'         => $FNS->create_page_url($site_pages[$site_id]['url'], $site_pages[$site_id]['uris'][$entry_id])
 					);
 				}
 			}
