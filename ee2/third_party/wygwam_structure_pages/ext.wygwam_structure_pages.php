@@ -103,16 +103,11 @@ class Wygwam_structure_pages_ext {
 
 					$label = $page_data['title'];
 
-					// add the indents
-					for ($d = 0; $d < $page_data['depth']; $d ++)
-					{
-						$label = '{INDENT}'.$label;
-					}
-
 					// add this page to the config
 					$config['link_types']['Structure'][] = array(
-						'label' => $$label,
-						'url' => $this->EE->functions->create_page_url($site_pages['url'], $site_pages[$site_id]['uris'][$entry_id])
+						'label' => $label,
+						'url' => $this->EE->functions->create_page_url($site_pages[$site_id]['url'], $site_pages[$site_id]['uris'][$entry_id]),
+						'label_depth' => $page_data['depth']
 					);
 				}
 			}
