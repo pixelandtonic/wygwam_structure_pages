@@ -1,0 +1,19 @@
+h1. Wygwam Structure Pages
+
+This ExpressionEngine extension adds Structure pages as a Link Type in Wygawm’s Link dialog.
+
+h3. Requirements
+
+* "Wygwam":http://pixelandtonic.com/wygwam 2.2.2 or later
+
+h3. Installation
+
+h4. EE1 Installation Instructions
+
+* Upload ee1/extensions/ext.wygwam_structure_pages.php to system/extensions/
+* Enable Wygwam Structure Pages in Admin → Utilities → Extensions Manager
+
+h4. EE2 Installation Instructions
+
+* Upload the ee2/third_party/wygwam_structure_pages folder to system/expressionengine/third_party/
+* Enable Wygwam Structure Pages in Add-Ons → Extensions
