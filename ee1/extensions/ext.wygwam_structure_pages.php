@@ -13,7 +13,7 @@ class Wygwam_structure_pages {
 
 	var $name           = 'Wygwam Structure Pages';
 	var $version        = '1.0';
-	var $description    = 'Adds a "Structure Pages" Link Type to Wygwam\'s Link dialog';
+	var $description    = 'Adds a &ldquo;Structure Pages&rdquo; Link Type to Wygwam&rsquo;s Link dialog';
 	var $settings_exist = 'n';
 	var $docs_url       = 'http://github.com/brandonkelly/wygwam_structure_pages';
 
