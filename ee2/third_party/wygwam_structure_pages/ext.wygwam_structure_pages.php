@@ -116,6 +116,3 @@ class Wygwam_structure_pages_ext {
 		return $config;
 	}
 }
-
-// End of file ext.wygwam_structure_pages.php */
-// Location: ./system/expressionengine/third_party/wygwam_structure_pages/ext.wygwam_structure_pages.php
